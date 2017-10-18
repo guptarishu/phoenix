@@ -260,6 +260,11 @@ public class IndexMemStore implements KeyValueStore {
       return seekInSubLists();
     }
 
+    @Override
+    public long getScannerOrder() {
+      return 0l;
+    }
+
     /*
      * Returns the higher of the two key values, or null if they are both null. This uses
      * comparator.compare() to compare the KeyValue using the memstore comparator.
@@ -306,10 +311,10 @@ public class IndexMemStore implements KeyValueStore {
      * MemStoreScanner returns max value as sequence id because it will always have the latest data
      * among all files.
      */
-    @Override
-    public long getSequenceID() {
-      return Long.MAX_VALUE;
-    }
+//    @Override
+//    public long getSequenceID() {
+//      return Long.MAX_VALUE;
+//    }
     
     @Override
     public boolean shouldUseScanner(Scan scan, Store store, long oldestUnexpiredTS) {

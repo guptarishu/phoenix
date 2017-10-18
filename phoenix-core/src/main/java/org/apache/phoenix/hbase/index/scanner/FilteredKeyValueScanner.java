@@ -109,6 +109,11 @@ public class FilteredKeyValueScanner implements KeyValueScanner {
     }
 
     @Override
+    public long getScannerOrder() {
+        return 0L;
+    }
+
+    @Override
     public boolean requestSeek(Cell kv, boolean forward, boolean useBloom) throws IOException {
         return this.reseek(kv);
     }
@@ -118,10 +123,10 @@ public class FilteredKeyValueScanner implements KeyValueScanner {
         return false;
     }
 
-    @Override
-    public long getSequenceID() {
-        return this.delegate.getSequenceID();
-    }
+//    @Override
+//    public long getSequenceID() {
+//        return this.delegate.getSequenceID();
+//    }
 
     @Override
     public boolean shouldUseScanner(Scan scan, Store store, long oldestUnexpiredTS) {

@@ -98,6 +98,8 @@
 
   <properties>
     <!-- General Properties -->
+    <cdh.hbase.version>1.2.0-cdh5.9.1</cdh.hbase.version>
+    <!-- General Properties -->
     <antlr-input.dir>src/main/antlr3</antlr-input.dir>
     <antlr-output.dir>target/generated-sources/antlr3</antlr-output.dir>
     <test.output.tofile>true</test.output.tofile>
@@ -475,6 +477,11 @@
         <groupId>org.apache.phoenix</groupId>
         <artifactId>phoenix-core</artifactId>
         <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.sun.istack</groupId>
+        <artifactId>istack-commons-runtime</artifactId>
+        <version>2.2</version>
       </dependency>
       <dependency>
         <groupId>org.apache.phoenix</groupId>
